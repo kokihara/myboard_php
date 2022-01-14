@@ -11,8 +11,10 @@ if (!function_exists('imagecreatetruecolor')) {
 function h($s) {
   return htmlspecialchars($s, ENT_QUOTES, 'UTF-8');
 }
-require 'ImageUploader.php';
+require 'upload.php';
+
 $uploader = new \MyApp\ImageUploader();
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $uploader->upload();
 }
